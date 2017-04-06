@@ -12,14 +12,16 @@ console.log('hello world');
 
 var newRandomArray = [];
 
-for (var i = 0; i < 30; i = i + 1) {
-	// generate a random number
-	var randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-	// add that word to new array
-	newRandomArray + newRandomArray.push(randomWord);
-	// console.log(newWord);
-	console.log(newRandomArray);
-}
+var makeShort = function makeShort() {
+	for (var i = 0; i < 30; i = i + 1) {
+		// generate a random number
+		var randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
+		// add that word to new array
+		newRandomArray + newRandomArray.push(randomWord);
+		// console.log(newWord);
+		console.log(newRandomArray);
+	}
+};
 
 // how to add punctuation? Cupcake Ipsum?
 
@@ -28,6 +30,7 @@ ipsumApp.events = function () {
 	$('#button__short').on('click', function (e) {
 		e.preventDefault();
 		console.log('clicked short');
+		makeShort();
 
 		//get me 30 words from 
 	});

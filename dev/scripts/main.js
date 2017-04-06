@@ -11,13 +11,15 @@ console.log('hello world');
 
 let newRandomArray = [];
 
-for (let i = 0; i < 30; i = i + 1) {
-	// generate a random number
-	let randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-	// add that word to new array
-	newRandomArray + newRandomArray.push(randomWord);
-	// console.log(newWord);
-	console.log(newRandomArray);
+var makeShort = () => {
+	for (let i = 0; i < 30; i = i + 1) {
+		// generate a random number
+		let randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
+		// add that word to new array
+		newRandomArray + newRandomArray.push(randomWord);
+		// console.log(newWord);
+		console.log(newRandomArray);
+	}
 }
 
 // how to add punctuation? Cupcake Ipsum?
@@ -27,6 +29,7 @@ ipsumApp.events = () => {
 	$('#button__short').on('click', (e) => {
 		e.preventDefault();
 		console.log('clicked short');
+		makeShort();
 
 
 		//get me 30 words from 
