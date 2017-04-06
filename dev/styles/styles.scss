@@ -1,0 +1,22 @@
+body {
+	background-color: thistle;
+	display: flex;
+	justify-content: center;
+}
+
+header {
+	text-align: center;
+}
+
+.wrapper {
+	width: 70vw;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+}
+
