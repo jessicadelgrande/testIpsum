@@ -1,7 +1,8 @@
 @mixin buttonStyles {
-	// font-family: $fontSecondary;
+	font-family: $fontSecondary;
 	border: 2px solid white;
 	min-width: 200px;
+	min-height: 50px;
 	text-align: center;
 	margin: 30px 15px;
 	// padding: 15px 15px;
