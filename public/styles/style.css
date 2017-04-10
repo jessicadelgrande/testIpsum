@@ -203,6 +203,8 @@ a {
   align-items: center;
   font-family: "Merriweather", serif;
   background-color: thistle;
-  padding: 30px;
   margin-top: 30px;
   line-height: 2.3rem; }
+
+.completeParagraph {
+  padding: 30px; }
