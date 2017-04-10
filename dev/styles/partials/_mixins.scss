@@ -1,4 +1,24 @@
 @mixin buttonStyles {
+	// font-family: $fontSecondary;
+	border: 2px solid white;
+	min-width: 200px;
+	text-align: center;
+	margin: 30px 15px;
+	// padding: 15px 15px;
+}
+
+@mixin linkStyles {
+	text-decoration: none;
+	color: black;
+	&:visited {
+		color: black;
+	}
+	&:hover {
+		color: red;
+	}
+	&:active {
+		color: red;
+	}
 }
 
 // media breakpoints

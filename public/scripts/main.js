@@ -12,8 +12,12 @@ var newRandomArray = new Array();
 // create variables that return varying numbers of words
 // and push these words onto newRandomArray
 // for use in onClick events
-var generateRandom = function generateRandom() {
-	for (var i = 0; i < 24; i = i + 1) {
+var generateRandomSentence = function generateRandomSentence() {
+	for (var i = 0; i < 8; i = i + 1) {
+		var capitalizeFirstLetter = function capitalizeFirstLetter(snt) {
+			return snt.charAt(0).toUpperCase() + snt.slice(1) + ".";
+		};
+
 		// generate a random number
 		var randomNumber = Math.floor(Math.random() * ipsumList.length);
 		var randomWord = ipsumList[randomNumber];
@@ -21,20 +25,24 @@ var generateRandom = function generateRandom() {
 		// add that word to new empty array called newRandomArray
 		newRandomArray.push(randomWord);
 		console.log('new array', newRandomArray);
-		var paragraph = newRandomArray.join(' ');
-		$("section.displayIpsum").html("<div class='completeParagraph'><p> " + paragraph + " </p></div>");
-		// for (let i = 7; i < 24; i += 8) {
-		// 	newRandomArray[i] += '.';
-		// }
+		var sentence = newRandomArray.join(' ');
+
+		var finalSentence = capitalizeFirstLetter(sentence);
+		console.log(finalSentence);
+		$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalSentence + " </p></div>");
 	}
 };
 
-// let punctuationArray = () => {
-// 	for (i = 7; i < 24; i += 8) {
-// 		newRandomArray[i] += ". ";
-// 	} 
-// }
-// console.log('punctuation', punctuationArray());
+// capitalize first letter of generateRandomSentence
+// add . to end of generateRandomSentence
+// generateSmallParagraph = generateRandomSentence * number of sentences
+// generateSmall, generateMedium, generateLarge
+
+
+var generateSmallParagraph = function generateSmallParagraph() {
+	generateRandomSentence();
+	// ucFirstLetter();
+};
 
 var makeMedium = function makeMedium() {
 	for (var i = 0; i < 48; i = i + 1) {
@@ -52,21 +60,14 @@ var makeLong = function makeLong() {
 	}
 };
 
-// sort into groups of 8 (8 words per sentence)
-// after every 8th item (7, 15, 23) add a period to end sentence
-
-
-// capitalize first letter in each sentence
-
-// how to add punctuation? Cupcake Ipsum?
-
-
 // click event
 ipsumApp.events = function () {
 	$('#button__short').on('click', function (e) {
 		e.preventDefault();
 		console.log('clicked short');
-		generateRandom();
+		generateSmallParagraph();
+		// generateRandomSentence();
+		// capitalizeFirstLetter();
 	});
 	$('#button__medium').on('click', function (e) {
 		e.preventDefault();

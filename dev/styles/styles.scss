@@ -1,5 +1,23 @@
+@import 'partials/setup';
+@import 'partials/variables';
+@import 'partials/mixins';
+
+html {
+	font-size: 62.5%;
+}
+
 body {
-	background-color: thistle;
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	background-image: url("../../assets/i-m-priscilla-110829-sm.jpg");
+	background-repeat: no-repeat;
+	background-position: cover;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 }
@@ -8,10 +26,33 @@ header {
 	text-align: center;
 }
 
+h1 {
+	font-family: $fontPrimary;
+	font-weight: 700;
+	font-size: 9.4rem;
+	margin: 30px;
+}
+
+h2 {
+	font-family: $fontPrimary;
+	font-weight: 700;
+	font-size: 3.6rem;
+	margin: 40px 15px 40px 15px;
+}
+
+p {
+	// font-family: $fontSecondary;
+	font-size: 1.6rem;
+}
+
+a {
+	@include linkStyles;
+}
+
 .wrapper {
 	width: 70vw;
 	display: flex;
-	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 }
 
@@ -20,3 +61,15 @@ header {
 	justify-content: center;
 }
 
+.singleButton {
+	@include buttonStyles;
+	p {
+		font-size: 1.4rem;
+	}
+}
+
+.displayIpsum {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
