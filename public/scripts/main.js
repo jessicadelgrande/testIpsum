@@ -9,11 +9,11 @@ console.log('hello world');
 // create empty array to push new words onto
 var newRandomArray = new Array();
 
-// create variables that return varying numbers of words
+// create a variable that returns 8 words
 // and push these words onto newRandomArray
-// for use in onClick events
 var generateRandomSentence = function generateRandomSentence() {
 	for (var i = 0; i < 8; i = i + 1) {
+		// capitalize first letter and add period to end
 		var capitalizeFirstLetter = function capitalizeFirstLetter(snt) {
 			return snt.charAt(0).toUpperCase() + snt.slice(1) + ".";
 		};
@@ -21,43 +21,18 @@ var generateRandomSentence = function generateRandomSentence() {
 		// generate a random number
 		var randomNumber = Math.floor(Math.random() * ipsumList.length);
 		var randomWord = ipsumList[randomNumber];
-		console.log('random word', randomWord);
 		// add that word to new empty array called newRandomArray
 		newRandomArray.push(randomWord);
-		console.log('new array', newRandomArray);
 		var sentence = newRandomArray.join(' ');
-
 		var finalSentence = capitalizeFirstLetter(sentence);
-		console.log(finalSentence);
 		$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalSentence + " </p></div>");
 	}
 };
 
-// capitalize first letter of generateRandomSentence
-// add . to end of generateRandomSentence
-// generateSmallParagraph = generateRandomSentence * number of sentences
-// generateSmall, generateMedium, generateLarge
-
-
-var generateSmallParagraph = function generateSmallParagraph() {
-	generateRandomSentence();
-	// ucFirstLetter();
-};
-
-var makeMedium = function makeMedium() {
-	for (var i = 0; i < 48; i = i + 1) {
-		var randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-		var fullArray = newRandomArray + newRandomArray.push(randomWord);
-		// console.log(fullArray);
-	}
-};
-
-var makeLong = function makeLong() {
-	for (var i = 0; i < 80; i = i + 1) {
-		var randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-		var fullArray = newRandomArray + newRandomArray.push(randomWord);
-		// console.log(fullArray);
-	}
+var generateShortParagraph = function generateShortParagraph() {
+	for (var i = 0; i < 5; i = i + 1) {
+		generateRandomSentence();
+	};
 };
 
 // click event
@@ -65,9 +40,7 @@ ipsumApp.events = function () {
 	$('#button__short').on('click', function (e) {
 		e.preventDefault();
 		console.log('clicked short');
-		generateSmallParagraph();
-		// generateRandomSentence();
-		// capitalizeFirstLetter();
+		generateShortParagraph();
 	});
 	$('#button__medium').on('click', function (e) {
 		e.preventDefault();
@@ -80,15 +53,6 @@ ipsumApp.events = function () {
 		makeLong();
 	});
 };
-
-// user clicks paragraph button
-// random number is generated based on length of list
-// word that matches that random number in the array is returned
-// for loop continues to generate random numbers and return words
-// until number of words in paragraph is reached
-// then periods are concatenated after every 8? words
-// commas?
-// paragraph is displayed on the page
 
 ipsumApp.init = function () {}; //end of init();
 

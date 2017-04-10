@@ -8,56 +8,30 @@ console.log('hello world');
 // create empty array to push new words onto
 let newRandomArray = new Array();
 
-// create variables that return varying numbers of words
+// create a variable that returns 8 words
 // and push these words onto newRandomArray
-// for use in onClick events
 let generateRandomSentence = () => {
 	for (let i = 0; i < 8; i = i + 1) {
 		// generate a random number
 		let randomNumber = Math.floor(Math.random() * ipsumList.length);
 		let randomWord = ipsumList[randomNumber];
-		console.log('random word', randomWord);
 		// add that word to new empty array called newRandomArray
 		newRandomArray.push(randomWord);
-		console.log('new array', newRandomArray);
 		let sentence = newRandomArray.join(' ');
+		// capitalize first letter and add period to end
 		function capitalizeFirstLetter(snt) {
 			return snt.charAt(0).toUpperCase() + snt.slice(1) + ".";
 			}
 		let finalSentence = capitalizeFirstLetter(sentence); 
-		console.log(finalSentence);
 		$("section.displayIpsum").html(`<div class='completeParagraph'><p> ${finalSentence} </p></div>`);
 	}
 } 
 
-// capitalize first letter of generateRandomSentence
-// add . to end of generateRandomSentence
-// generateSmallParagraph = generateRandomSentence * number of sentences
-// generateSmall, generateMedium, generateLarge
-
-
-let generateSmallParagraph = () => {
-	generateRandomSentence();
-	// ucFirstLetter();
+let generateShortParagraph = () => {
+	for (let i = 0; i < 5; i = i + 1) {
+		generateRandomSentence();
+	};
 }
-
-
-let makeMedium = () => {
-	for (let i = 0; i < 48; i = i + 1) {
-		let randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-		let fullArray = newRandomArray + newRandomArray.push(randomWord);
-		// console.log(fullArray);
-	}
-}
-
-let makeLong = () => {
-	for (let i = 0; i < 80; i = i + 1) {
-		let randomWord = ipsumList[Math.floor(Math.random() * ipsumList.length)];
-		let fullArray = newRandomArray + newRandomArray.push(randomWord);
-		// console.log(fullArray);
-	}
-}
-
 
 
 // click event
@@ -65,9 +39,7 @@ ipsumApp.events = () => {
 	$('#button__short').on('click', (e) => {
 		e.preventDefault();
 		console.log('clicked short');
-		generateSmallParagraph();
-		// generateRandomSentence();
-		// capitalizeFirstLetter();
+		generateShortParagraph();
 	});
 	$('#button__medium').on('click', (e) => {
 		e.preventDefault();
@@ -80,16 +52,6 @@ ipsumApp.events = () => {
 		makeLong();
 	});
 }
-
-
-// user clicks paragraph button
-// random number is generated based on length of list
-// word that matches that random number in the array is returned
-// for loop continues to generate random numbers and return words
-// until number of words in paragraph is reached
-// then periods are concatenated after every 8? words
-// commas?
-// paragraph is displayed on the page
 
 ipsumApp.init = () => {
 } //end of init();
