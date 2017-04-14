@@ -13,6 +13,7 @@ var combinedSentences = [];
 // empty newRandomArray after each sentence is formed
 // convert each array into a string using .join
 // push that sentence into combinedSentences array, each sentence is a new element
+// pop() that sentence off newRandomArray
 // run capitalizeFirstLetter function on EACH element in the combinedSentences array
 // this will give each sentence a capital letter and add eh to the end
 // then concat all of these together into one string
@@ -20,41 +21,57 @@ var combinedSentences = [];
 
 // create a variable that returns 5 words
 // and push these words onto newRandomArray
-var generateRandomSentence = function generateRandomSentence() {
+var generateRandomWords = function generateRandomWords() {
 	for (var i = 0; i < 5; i = i + 1) {
-		// capitalize first letter and add period to end
-		var capitalizeFirstLetter = function capitalizeFirstLetter(snt) {
-			return snt.charAt(0).toUpperCase() + snt.slice(1) + ", eh. ";
-		};
-		// console.log("random array", newRandomArray);
-
-
 		// generate a random number
 		var randomNumber = Math.floor(Math.random() * ipsumList.length);
 		var randomWord = ipsumList[randomNumber];
 		// add that word to new empty array called newRandomArray
 		newRandomArray.push(randomWord);
-		var sentence = newRandomArray.join(' ');var finalSentence = capitalizeFirstLetter(sentence);
-		$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalSentence + " </p></div>");
 	}
 };
 
-var generateShortParagraph = function generateShortParagraph() {
-	for (var i = 0; i < 4; i = i + 1) {
-		generateRandomSentence();
-		// finalSentence * 4;
-	};
+// join sentence and push onto combinedSentence array
+// this happens once for every time generateRandomWords executes
+// (5 words = 1 sentence)
+var createSentence = function createSentence() {
+	var sentence = newRandomArray.splice(0);
+	var joinedSentence = sentence.join(" ");
+	console.log("joined sentence", joinedSentence);
+	// capitalize first letter and add period to end
+	// function capitalizeFirstLetter(snt) {
+	// 	return snt.charAt(0).toUpperCase() + snt.slice(1) + ", eh. ";
+	// 	}
 };
+
+// sentence is a string
+// need to push string onto new array (combinedSentences)
+// need to pop string off old array (newRandomArray)
+// capitalize first letter and add period to end
+// function capitalizeFirstLetter(snt) {
+// 	return snt.charAt(0).toUpperCase() + snt.slice(1) + ", eh. ";
+// 	}
+// console.log("random array", newRandomArray);
+// let finalSentence = capitalizeFirstLetter(sentence); 
+// $("section.displayIpsum").html(`<div class='completeParagraph'><p> ${finalSentence} </p></div>`);
+
+// paragraph (concat sentences)
+// let generateShortParagraph = () => {
+// 	for (let i = 0; i < 4; i = i + 1) {
+// 		generateRandomSentence();
+// 		// finalSentence * 4;
+// 	};
+// }
 
 // click event
 ipsumApp.events = function () {
 	$('#button__short').on('click', function (e) {
 		e.preventDefault();
-		console.log("random array", newRandomArray);
 		newRandomArray = [];
 		console.log('clicked short');
-		// generateRandomSentence();
-		generateShortParagraph();
+		generateRandomWords();
+		createSentence();
+		// generateShortParagraph();
 	});
 	$('#button__medium').on('click', function (e) {
 		e.preventDefault();
