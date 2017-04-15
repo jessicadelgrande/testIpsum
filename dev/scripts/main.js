@@ -5,9 +5,10 @@ const ipsumList = [ "hoser", "two-four", "double-double", "homo milk", "keener",
 
 console.log('hello world');
 
-// create empty array to push new words onto
+// create empty array for new words
 let newRandomArray = [];
 
+// create empty array for new sentences
 let combinedSentences = [];
 
 // create a variable that returns 5 words
@@ -40,27 +41,43 @@ const shortParagraph = () => {
 	$("section.displayIpsum").html(`<div class='completeParagraph'><p> ${finalShort} </p></div>`);
 }
 
-// click event
+const mediumParagraph = () => {
+	for (let i = 0; i < 8; i = i + 1) {
+		generateRandomWords();
+	}
+	let finalMedium = combinedSentences.join(" ");
+	$("section.displayIpsum").html(`<div class='completeParagraph'><p> ${finalMedium} </p></div>`);
+}
+
+const longParagraph = () => {
+	for (let i = 0; i < 12; i = i + 1) {
+		generateRandomWords();
+	}
+	let finalLong = combinedSentences.join(" ");
+	$("section.displayIpsum").html(`<div class='completeParagraph'><p> ${finalLong} </p></div>`);
+}
+
+// click events
 ipsumApp.events = () => {
-	$('#button__short').on('click', (e) => {
+	$('#button__short').one('click', (e) => {
 		e.preventDefault();
 		newRandomArray = [];
 		shortParagraph();
 	});
-	$('#button__medium').on('click', (e) => {
+	$('#button__medium').one('click', (e) => {
 		e.preventDefault();
-		console.log('clicked medium');
-		makeMedium();
+		newRandomArray = [];
+		mediumParagraph();
 	});
-	$('#button__long').on('click', (e) => {
+	$('#button__long').one('click', (e) => {
 		e.preventDefault();
-		console.log('clicked long');
-		makeLong();
+		newRandomArray = [];
+		longParagraph();
 	});
 }
 
 ipsumApp.init = () => {
-} //end of init();
+}
 
 $(() => {
 	ipsumApp.init();

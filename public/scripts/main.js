@@ -6,9 +6,10 @@ var ipsumList = ["hoser", "two-four", "double-double", "homo milk", "keener", "k
 
 console.log('hello world');
 
-// create empty array to push new words onto
+// create empty array for new words
 var newRandomArray = [];
 
+// create empty array for new sentences
 var combinedSentences = [];
 
 // create a variable that returns 5 words
@@ -41,26 +42,42 @@ var shortParagraph = function shortParagraph() {
 	$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalShort + " </p></div>");
 };
 
-// click event
+var mediumParagraph = function mediumParagraph() {
+	for (var i = 0; i < 8; i = i + 1) {
+		generateRandomWords();
+	}
+	var finalMedium = combinedSentences.join(" ");
+	$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalMedium + " </p></div>");
+};
+
+var longParagraph = function longParagraph() {
+	for (var i = 0; i < 12; i = i + 1) {
+		generateRandomWords();
+	}
+	var finalLong = combinedSentences.join(" ");
+	$("section.displayIpsum").html("<div class='completeParagraph'><p> " + finalLong + " </p></div>");
+};
+
+// click events
 ipsumApp.events = function () {
-	$('#button__short').on('click', function (e) {
+	$('#button__short').one('click', function (e) {
 		e.preventDefault();
 		newRandomArray = [];
 		shortParagraph();
 	});
-	$('#button__medium').on('click', function (e) {
+	$('#button__medium').one('click', function (e) {
 		e.preventDefault();
-		console.log('clicked medium');
-		makeMedium();
+		newRandomArray = [];
+		mediumParagraph();
 	});
-	$('#button__long').on('click', function (e) {
+	$('#button__long').one('click', function (e) {
 		e.preventDefault();
-		console.log('clicked long');
-		makeLong();
+		newRandomArray = [];
+		longParagraph();
 	});
 };
 
-ipsumApp.init = function () {}; //end of init();
+ipsumApp.init = function () {};
 
 $(function () {
 	ipsumApp.init();
