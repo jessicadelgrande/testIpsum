@@ -188,15 +188,20 @@ a {
   display: flex;
   justify-content: center; }
 
-.singleButton {
+.singleButton,
+.resetButton {
   font-family: "Merriweather", serif;
   border: 2px solid white;
   min-width: 200px;
   min-height: 50px;
   text-align: center;
   margin: 30px 15px; }
-  .singleButton p {
+  .singleButton p,
+  .resetButton p {
     font-size: 1.4rem; }
+
+.clicked {
+  pointer-events: none; }
 
 .displayIpsum {
   display: flex;

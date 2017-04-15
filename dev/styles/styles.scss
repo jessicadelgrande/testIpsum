@@ -62,22 +62,17 @@ a {
 	justify-content: center;
 }
 
-.singleButton {
+.singleButton,
+.resetButton {
 	@include buttonStyles;
 	p {
 		font-size: 1.4rem;
 	}
 }
 
-// .box1 {
-// 	width: 300px;
-// 	height: 300px;
-// 	margin-top: 200px;
-// 	background-color: cadetblue;
-// 	border: 50px solid rgba(0,0,0, 0.5);
-// 	// outline: 50px solid rgba(0,0,0, 0.5);
-// 	background-clip: padding-box;
-// }
+.clicked {
+	pointer-events: none;
+}
 
 .displayIpsum {
 	display: flex;
