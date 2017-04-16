@@ -10,6 +10,7 @@ body {
 	display: flex;
 	justify-content: center;
 	font-family: $fontPrimary;
+	color: $colorGrey;
 }
 
 main {
@@ -91,10 +92,15 @@ a {
 	justify-content: center;
 	align-items: center;
 	font-family: $fontSecondary;
+	color: $colorGrey;
 	line-height: 2.3rem;
 	overflow: auto;
 	transition: all 1s ease-in-out;
 	width: 85%;
+}
+
+.completeParagraph {
+	margin: 0;
 }
 
 .slideUp {

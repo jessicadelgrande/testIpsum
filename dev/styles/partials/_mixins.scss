@@ -10,9 +10,9 @@
 @mixin linkStyles {
 	text-decoration: none;
 	font-family: $fontPrimary;
-	color: black;
+	color: $colorGrey;
 	&:visited {
-		color: black;
+		color: $colorGrey;
 	}
 	&:hover {
 		color: red;

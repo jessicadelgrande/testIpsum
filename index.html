@@ -46,19 +46,19 @@
 			</div>
 		</section>
 
-		<section class="displayIpsum">
+		<section class="displayIpsum" id="displayIpsum">
 
 		</section>
 
 		<section>
-			<div class="copyButton hidden" id="button__copy" name="button__copy">
+			<div class="copyButton hidden" id="button__copy" name="button__copy" data-clipboard-target="#displayParagraph">
 				<a href="#">
 				<p>
 					copy text
 				</p>
 				</a>
 			</div>
-			<div class="resetButton hidden" id="button__tryAgain" name="button__tryAgain">
+			<div class="resetButton hidden" id="button__tryAgain" name="button__tryAgain" data-clipboard-target="#displayParagraph">
 				<a href="#">
 				<p>
 					sorry, let's try again
@@ -74,6 +74,7 @@
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
 	<script src="public/scripts/main.js"></script>
 	<!-- end scripts -->
 </body>
