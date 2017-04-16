@@ -63,23 +63,40 @@ ipsumApp.events = function () {
 	$("#button__short").one("click", function (e) {
 		e.preventDefault();
 		$(".singleButton").addClass("clicked");
+		$(".singleButton").addClass("fadeOut");
+		$(".displayIpsum").addClass("slideUp");
+		$(".resetButton").removeClass("hidden");
+		$(".resetButton").removeClass("fadeIn");
+		$(".resetButton").addClass("slideUp");
+		$(".copyButton").removeClass("hidden");
+		$(".copyButton").addClass("slideUp");
+		$("h2").addClass("fadeOut");
 		newRandomArray = [];
 		shortParagraph();
 	});
 	$("#button__medium").one("click", function (e) {
 		e.preventDefault();
 		$(".singleButton").addClass("clicked");
+		$(".singleButton").addClass("fadeOut");
+		$(".displayIpsum").addClass("slideUp");
+		$(".resetButton").addClass("slideUp");
+		$("h2").addClass("fadeOut");
 		newRandomArray = [];
 		mediumParagraph();
 	});
 	$("#button__long").one("click", function (e) {
 		e.preventDefault();
 		$(".singleButton").addClass("clicked");
+		$(".singleButton").addClass("fadeOut");
+		$(".displayIpsum").addClass("slideUp");
+		$(".resetButton").addClass("slideUp");
+		$("h2").addClass("fadeOut");
 		newRandomArray = [];
 		longParagraph();
 	});
 	$("#button__tryAgain").on("click", function (e) {
 		e.preventDefault();
+		$(".singleButton").addClass("fadeIn");
 		newRandomArray = [];
 		window.location = "";
 	});

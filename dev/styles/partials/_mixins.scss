@@ -1,15 +1,15 @@
 @mixin buttonStyles {
 	font-family: $fontSecondary;
-	border: 2px solid white;
+	border: 2px solid rgb(105,105,105);
 	min-width: 200px;
 	min-height: 50px;
 	text-align: center;
 	margin: 30px 15px;
-	// padding: 15px 15px;
 }
 
 @mixin linkStyles {
 	text-decoration: none;
+	font-family: $fontPrimary;
 	color: black;
 	&:visited {
 		color: black;
