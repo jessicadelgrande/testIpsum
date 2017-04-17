@@ -94,6 +94,21 @@ var resetPage = function resetPage() {
 	newRandomArray = [];
 };
 
+var iconToggle = function iconToggle() {
+	$(".iconText").addClass("hidden");
+	// $(".iconText").hide(); 
+	// $(".iconTextButton").click(() => {
+	// 	$(".iconTextButton").toggleClass("active").next().slideToggle("fast");
+	// });
+};
+
+// const iconToggle = () => {
+// 	$(".iconButton").click(function(){
+// 		$(".toggle").toggleClass("hidden fadeIn");
+// 	});
+// }
+
+
 // click events
 ipsumApp.events = function () {
 	$("#button__short").on("click", function (e) {
@@ -115,6 +130,10 @@ ipsumApp.events = function () {
 		e.preventDefault();
 		window.location = "";
 	});
+	$(".buttonText").on("click", function (e) {
+		e.preventDefault();
+		iconToggle();
+	});
 };
 
 ipsumApp.init = function () {};
@@ -122,4 +141,5 @@ ipsumApp.init = function () {};
 $(function () {
 	ipsumApp.init();
 	ipsumApp.events();
+	iconToggle();
 });
