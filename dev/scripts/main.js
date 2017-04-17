@@ -93,21 +93,6 @@ const resetPage = () => {
 	newRandomArray = [];
 }
 
-const iconToggle = () => {
-	$(".iconText").addClass("hidden");
-	// $(".iconText").hide(); 
-	// $(".iconTextButton").click(() => {
-	// 	$(".iconTextButton").toggleClass("active").next().slideToggle("fast");
-	// });
-}
-
-// const iconToggle = () => {
-// 	$(".iconButton").click(function(){
-// 		$(".toggle").toggleClass("hidden fadeIn");
-// 	});
-// }
-
-
 // click events
 ipsumApp.events = () => {
 	$("#button__short").on("click", (e) => {
@@ -131,7 +116,6 @@ ipsumApp.events = () => {
 	});
 	$(".buttonText").on("click", (e) => {
 		e.preventDefault();
-		iconToggle();
 	});
 }
 
@@ -141,5 +125,4 @@ ipsumApp.init = () => {
 $(() => {
 	ipsumApp.init();
 	ipsumApp.events();
-	iconToggle();
 });

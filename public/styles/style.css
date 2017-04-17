@@ -181,33 +181,6 @@ a {
   a:active {
     color: red; }
 
-.iconContainer {
-  position: absolute;
-  z-index: 10;
-  top: 10px;
-  left: 10px;
-  padding: 0px;
-  display: flex;
-  align-items: flex-start; }
-  .iconContainer .iconButton {
-    background: none;
-    border: none;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0px;
-    -moz-appearance: none;
-    -moz-border-radius: 0px; }
-    .iconContainer .iconButton:focus {
-      outline: none; }
-
-.iconText p {
-  font-size: 12px;
-  margin: 0;
-  margin-top: 5px; }
-
-.mapleLeaf {
-  width: 20px;
-  height: 20px; }
-
 .wrapper {
   width: 80vw;
   height: auto;
