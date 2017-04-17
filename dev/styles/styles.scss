@@ -23,7 +23,9 @@ main {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
-	position: relative;
+	@include bp(med) {
+		height: auto;
+	}
 }
 
 header {
@@ -34,6 +36,9 @@ h1 {
 	font-weight: 700;
 	font-size: 9.4rem;
 	margin: 30px;
+	@include bp(sml) {
+		font-size: 7rem;
+	}
 }
 
 h2 {
@@ -41,6 +46,9 @@ h2 {
 	font-size: 3.6rem;
 	margin: 40px 15px 20px 15px;
 	transition: all 1s ease-in-out;
+	@include bp(sml) {
+		font-size: 2.8rem;
+	}
 }
 
 p {
@@ -59,11 +67,18 @@ a {
 	align-items: center;
 	flex-direction: column;
 	background-color: rgba(255,250,250, 0.5);
+	@include bp(lrg) {
+		width: 100%;
+	}
 }
 
 .buttons {
 	display: flex;
 	justify-content: center;
+	@include bp(lrg) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .singleButton,
@@ -78,6 +93,12 @@ a {
 	&:hover {
 		background: rgba(60,60,60, 0.5);
 		transition: all 0.3s ease-in-out;
+	}
+}
+
+.singleButton {
+	@include bp(lrg) {
+		margin: 10px;
 	}
 }
 
@@ -103,20 +124,23 @@ a {
 	overflow: auto;
 	transition: all 1s ease-in-out;
 	width: 85%;
+	@include bp(sml) {
+		width: 100%;
+	}
 }
 
 .completeParagraph {
 	margin: 0;
+	padding: 30px;
 }
 
 .slideUp {
 	transform: translate(0,-190px);
+	@include bp(lrg) {
+		transform: translate(0, -300px);
+	}
 }
 
 .hidden {
 	opacity: 0;
-}
-
-.completeParagraph {
-	padding: 30px;
 }

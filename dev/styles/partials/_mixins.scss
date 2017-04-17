@@ -6,6 +6,12 @@
 	text-align: center;
 	margin: 30px 15px;
 	padding: 15px;
+	@include bp(lrg) {
+		width: 400px;
+		@include bp(sml) {
+			width: 100%;
+		}
+	}
 }
 
 @mixin linkStyles {
@@ -27,19 +33,19 @@
 
 @mixin bp($size) {
 	@if ($size == 'sml') {
-		@media (max-width: 570px) { 
+		@media (max-width: 528px) { 
 			@content; 
 		}
 	}
 
 	@if ($size == 'med') {
-		@media (max-width: 680px) { 
+		@media (max-width: 770px) { 
 			@content; 
 		}
 	}
  
 	@if $size == 'lrg' {
-		@media (max-width: 750px) { 
+		@media (max-width: 874px) { 
 			@content; 
 		}
 	}

@@ -150,8 +150,10 @@ main {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  position: relative; }
+  justify-content: center; }
+  @media (max-width: 770px) {
+    main {
+      height: auto; } }
 
 header {
   text-align: center; }
@@ -160,12 +162,18 @@ h1 {
   font-weight: 700;
   font-size: 9.4rem;
   margin: 30px; }
+  @media (max-width: 528px) {
+    h1 {
+      font-size: 7rem; } }
 
 h2 {
   font-weight: 700;
   font-size: 3.6rem;
   margin: 40px 15px 20px 15px;
   transition: all 1s ease-in-out; }
+  @media (max-width: 528px) {
+    h2 {
+      font-size: 2.8rem; } }
 
 p {
   font-size: 1.6rem; }
@@ -189,10 +197,17 @@ a {
   align-items: center;
   flex-direction: column;
   background-color: rgba(255, 250, 250, 0.5); }
+  @media (max-width: 874px) {
+    .wrapper {
+      width: 100%; } }
 
 .buttons {
   display: flex;
   justify-content: center; }
+  @media (max-width: 874px) {
+    .buttons {
+      flex-direction: column;
+      align-items: center; } }
 
 .singleButton,
 .resetButton,
@@ -205,6 +220,16 @@ a {
   margin: 30px 15px;
   padding: 15px;
   transition: all 1s ease-in-out; }
+  @media (max-width: 874px) {
+    .singleButton,
+    .resetButton,
+    .copyButton {
+      width: 400px; } }
+  @media (max-width: 874px) and (max-width: 528px) {
+    .singleButton,
+    .resetButton,
+    .copyButton {
+      width: 100%; } }
   .singleButton p,
   .resetButton p,
   .copyButton p {
@@ -215,6 +240,10 @@ a {
   .copyButton:hover {
     background: rgba(60, 60, 60, 0.5);
     transition: all 0.3s ease-in-out; }
+
+@media (max-width: 874px) {
+  .singleButton {
+    margin: 10px; } }
 
 .clicked {
   pointer-events: none; }
@@ -235,15 +264,19 @@ a {
   overflow: auto;
   transition: all 1s ease-in-out;
   width: 85%; }
+  @media (max-width: 528px) {
+    .displayIpsum {
+      width: 100%; } }
 
 .completeParagraph {
-  margin: 0; }
+  margin: 0;
+  padding: 30px; }
 
 .slideUp {
   transform: translate(0, -190px); }
+  @media (max-width: 874px) {
+    .slideUp {
+      transform: translate(0, -300px); } }
 
 .hidden {
   opacity: 0; }
-
-.completeParagraph {
-  padding: 30px; }
